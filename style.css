@@ -1,0 +1,38 @@
+/*  */
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f5f8;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.search-form {
+    width: 90vw;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4rem 0;
+}
+
+#drink {
+    width: 80%;
+    border: none;
+    padding: .7rem;
+    border-radius: .5rem;
+    margin-top: 2rem;
+}
+
+#drink::placeholder {
+    text-transform: capitalize;
+}
+
+.hide-loading {
+    display: none;
+}
