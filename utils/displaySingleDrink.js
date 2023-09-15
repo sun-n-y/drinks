@@ -1,5 +1,6 @@
 import get from './getElement.js';
 import fetchDrinks from './fetchDrinks.js';
+import { hideLoading } from './loading.js';
 
 const idURL = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=';
 const img = get('.single-drink-image');
@@ -43,5 +44,6 @@ const displaySingleDrink = async () => {
     })
     .join('');
   document.title = name;
+  hideLoading();
 };
 export default displaySingleDrink;
