@@ -13,6 +13,7 @@ const displayDrinks = async (url) => {
   try {
     const data = await fetchDrinks(url);
     const drinks = data.drinks;
+    hideLoading();
     drinksContainer.innerHTML = drinks
       .map((drink) => {
         const { idDrink: id, strDrink: name, strDrinkThumb: image } = drink;
@@ -23,7 +24,6 @@ const displayDrinks = async (url) => {
             </a>`;
       })
       .join('');
-    hideLoading();
   } catch (error) {
     hideLoading();
     errorMsg.classList.remove('hide-error');
