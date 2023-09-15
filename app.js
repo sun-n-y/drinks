@@ -1,5 +1,6 @@
 import get from './utils/getElement.js';
+import displayDrinks from './utils/displayDrinks.js';
 
-const form = get('[name="drink"]');
+const URL = 'www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita';
 
-console.log(form);
+window.addEventListener('DOMContentLoaded', displayDrinks(URL));
