@@ -4,10 +4,12 @@ import { showLoading } from './loading.js';
 import { hideLoading } from './loading.js';
 
 const drinksContainer = get('.drinks-center');
+const errorMsg = get('.error-msg');
 
 const displayDrinks = async (url) => {
+  errorMsg.classList.add('hide-error');
   drinksContainer.innerHTML = '';
-  showLoading;
+  showLoading();
   try {
     const data = await fetchDrinks(url);
     const drinks = data.drinks;
@@ -23,7 +25,9 @@ const displayDrinks = async (url) => {
       .join('');
     hideLoading();
   } catch (error) {
-    console.log(error);
+    hideLoading();
+    errorMsg.classList.remove('hide-error');
+    errorMsg.textContent = `Sorry, no matches found.`;
   }
 };
 
